@@ -5,6 +5,8 @@
  */
 package model;
 
+import dao.UserDAO;
+
 /**
  *
  * @author dell
@@ -43,6 +45,11 @@ public class Mark {
 
     public void setMark(int mark) {
         this.mark = mark;
+    }
+
+    public User getUser() throws Exception {
+        UserDAO UserDAO = new UserDAO();
+        return UserDAO.selectbyId(userID);
     }
 
 }

@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dao.MarkDAO;
 import dao.QuestionDAO;
 import dao.TestDAO;
 import java.io.IOException;
@@ -62,6 +63,9 @@ public class TestController extends HttpServlet {
                     break;
                 case "Save Info":
                     saveEditTest(request, response);
+                    break;
+                case "leaderboard":
+                    leaderboard(request, response);
                     break;
             }
         } catch (Exception e) {
@@ -191,6 +195,16 @@ public class TestController extends HttpServlet {
         TestDAO dao = new TestDAO();
         dao.update(testID, testName, testContent, difficulty);
         response.sendRedirect("TestController?action=TestInfo");
+    }
+
+    public void leaderboard(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session = request.getSession(true);
+        int testID = (int) session.getAttribute("testID");
+
+        MarkDAO dao = new MarkDAO();
+        request.setAttribute("listMark", dao.select(testID));
+        RequestDispatcher rd = request.getRequestDispatcher("leaderboard.jsp");
+        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

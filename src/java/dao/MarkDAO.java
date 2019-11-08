@@ -8,6 +8,10 @@ package dao;
 import context.DBContext;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import model.Mark;
 
 /**
  *
@@ -25,5 +29,21 @@ public class MarkDAO {
         ps.executeUpdate();
         ps.close();
         conn.close();
+    }
+    
+    public List<Mark> select(int testID) throws Exception {
+        List<Mark> ls = new ArrayList<>();
+        Connection conn = new DBContext().getConnection();
+        String sql = "select * from [Mark] where testID = " + testID + " "
+                + "order by mark DESC";
+        ResultSet rs = conn.prepareStatement(sql).executeQuery();
+        while (rs.next()) {
+            int userID = rs.getInt("userID");
+            int mark = rs.getInt("mark");
+            ls.add(new Mark(userID, testID, mark));
+        }
+        rs.close();
+        conn.close();
+        return ls;
     }
 }
