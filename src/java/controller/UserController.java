@@ -36,11 +36,14 @@ public class UserController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            
-            if (request.getParameter("actionInfo").equals("startChange") ) {
+            if(request.getParameter("actionInfo").equals("showInfo")){
+                RequestDispatcher rd = request.getRequestDispatcher("user/accountInfo.jsp");
+                rd.forward(request, response);
+            }
+            if (request.getParameter("actionInfo").equals("Change") ) {
                 RequestDispatcher rd = request.getRequestDispatcher("user/changeInfo.jsp");
                 rd.forward(request, response);
-            } else if (request.getParameter("actionInfo").equals("saveChange")) {
+            } else if (request.getParameter("actionInfo").equals("save")) {
                 boolean isValidUser = false;
                 boolean checkRePass = false;
                 int userID = Integer.valueOf(request.getParameter("userid"));

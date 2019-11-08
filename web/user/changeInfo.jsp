@@ -1,10 +1,9 @@
 <%-- 
     Document   : changeInfo
-    Created on : Nov 3, 2019, 9:33:14 AM
+    Created on : Nov 5, 2019, 10:09:06 AM
     Author     : BangPC
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,25 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <script>
-        var uid = document.getElementById('uid');
-        var pwd = document.getElementById('pwd');
-        var repwd = document.getElementById('repwd');
-        uid.oninvalid = function (event) {
-            event.target.setCustomValidity('Username can not contain special character');
-        };
-        pwd.oninvalid = function (event) {
-            event.target.setCustomValidity('Password contain at least 4 characters and must contain number');
-        };
-        repwd.oninvalid = function (event) {
-            event.target.setCustomValidity('Password contain at least 4 characters and must contain number');
-        };
-        
-    </script>
-    
     <body>
-        <jsp:include page="header.jsp"/>
-        <jsp:include page="navigationBar.jsp"/>
         <form action="changeInfoController">
             <h1>Change Account Info</h1>
             <c:if test="${not empty error}">
@@ -64,9 +45,8 @@
                         <td>Type</td><td><input type="text" name="type" value="user" /></td>
                     </tr>
                 </table>
-                    <input type="submit" name="change" value="Change" onclick="return confirm('Do you want to change?')"/>
+                    <input type="submit" name="save" value="Save" onclick="return confirm('Do you want to change?')"/>
             </c:if>
         </form>
-        <jsp:include page="footer.jsp"/>
     </body>
 </html>

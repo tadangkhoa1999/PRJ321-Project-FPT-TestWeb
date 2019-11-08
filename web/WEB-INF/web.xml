@@ -33,10 +33,6 @@
         <servlet-class>controller.DoTestController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>changeInfoController</servlet-name>
-        <servlet-class>controller.changeInfoController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ResponseController</servlet-name>
         <servlet-class>controller.ResponseController</servlet-class>
     </servlet>
@@ -79,10 +75,6 @@
     <servlet-mapping>
         <servlet-name>DoTestController</servlet-name>
         <url-pattern>/DoTestController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>changeInfoController</servlet-name>
-        <url-pattern>/changeInfoController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ResponseController</servlet-name>
