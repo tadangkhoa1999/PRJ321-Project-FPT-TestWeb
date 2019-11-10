@@ -63,40 +63,37 @@
         </h1>
         <div class="row">
             <c:forEach var="x" items="${testList}">
-<<<<<<< HEAD
+
                 <div class="column">
                     <div class="card">
                         <h3>Test</h3>
                         <p>
                             <a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a>
                         </p>
-=======
+
                 <tr>
                     <td><a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a></td>
                     <td>
                         <a href="TestController?testID=${x.testID}&action=leaderboard">Leader board</a>
                     </td>
                     <td align="center">
->>>>>>> e1d062ebc275425105b6421165893d9e98060892
+
                         <c:url var="delete" value="TestController">
                             <c:param name="classID" value="${param.classID}"/>
                             <c:param name="testID" value="${x.testID}"/>
                             <c:param name="action" value="delete"/>
                         </c:url>
-<<<<<<< HEAD
                         <p>
                             <a href="${delete}" onclick="return confirm('Ban co muon xoa?')">
                                 <img src="media/delete.png"/> Delete
                             </a>
                         </p>
-=======
                         <a href="${delete}" onclick="return confirm('Ban co muon xoa?')">
                             <img src="media/delete.png"/> Delete
                         </a>
                     </td>
                     
                     <td align="center">
->>>>>>> e1d062ebc275425105b6421165893d9e98060892
                         <c:url var="edit" value="TestController">
                             <c:param name="testID" value="${x.testID}"/>
                             <c:param name="action" value="Edit Info"/>
@@ -115,7 +112,6 @@
                         <c:param name="classID" value="${param.classID}"/>
                         <c:param name="action" value="add"/>
                     </c:url>
-<<<<<<< HEAD
                     <p>
                         <a href="${add}" onclick="return confirm('Ban co muon them?')">
                             <img src="media/add.png"/>
@@ -126,7 +122,6 @@
                 </div>
             </div>
         </div>
-=======
                     <a href="${add}" onclick="return confirm('Ban co muon them?')">
                         <img src="media/add.png"/>
                     </a>
@@ -134,7 +129,6 @@
             </tr>
         </table>
 
->>>>>>> e1d062ebc275425105b6421165893d9e98060892
         <jsp:include page="footer.jsp"/>
     </body>
 </html>
