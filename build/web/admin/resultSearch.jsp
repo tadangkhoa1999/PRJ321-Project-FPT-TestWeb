@@ -87,6 +87,15 @@
                 clear: both;
                 display: table;
             }
+            .footer {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 1rem;
+                background-color: #efefef;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -139,12 +148,12 @@
             <ul style="list-style-type:none;">
                 <c:forEach var="x" items="${listUser}">
                     <li><a href="UserController?userID=${x.userID}&action=info">${x.username}</a></li>
-                </c:forEach>
+                    </c:forEach>
             </ul>
         </c:if>
         <p>
 
         </p>
-        <jsp:include page="footer.jsp"/>
+        
     </body>
 </html>

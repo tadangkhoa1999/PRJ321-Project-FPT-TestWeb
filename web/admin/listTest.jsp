@@ -23,6 +23,9 @@
             <c:forEach var="x" items="${testList}">
                 <tr>
                     <td><a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a></td>
+                    <td>
+                        <a href="TestController?testID=${x.testID}&action=leaderboard">Leader board</a>
+                    </td>
                     <td align="center">
                         <c:url var="delete" value="TestController">
                             <c:param name="classID" value="${param.classID}"/>
@@ -33,6 +36,7 @@
                             <img src="media/delete.png"/> Delete
                         </a>
                     </td>
+                    
                     <td align="center">
                         <c:url var="edit" value="TestController">
                             <c:param name="testID" value="${x.testID}"/>
@@ -56,6 +60,7 @@
                 </td>
             </tr>
         </table>
+
         <jsp:include page="footer.jsp"/>
     </body>
 </html>

@@ -12,19 +12,65 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>List Test</title>
     </head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {margin: 0 -5px;}
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+    </style>
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <table>
-            <tr>
-                <th>Test Name</th>
-            </tr>
+        <h1 style="text-align: center">List Tests</h1>
+        <div class="row">
             <c:forEach var="x" items="${testList}">
-                <tr>
-                    <td><a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a> </td>
-                </tr>
+                <div class="column">
+                    <div class="card">
+                        <h3>Test</h3>
+                        <p><a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a></p>
+                        <p>${x.testContent}</p>
+                    </div>
+                </div>
             </c:forEach>
-        </table>
-        <jsp:include page="footer.jsp"/>
+        </div>
+        
     </body>
 </html>

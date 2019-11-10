@@ -13,6 +13,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Do Test</title>
     </head>
+    <style>
+        .button3 {
+            width: 80px;
+            height: 35px;
+            font-size: 16px;
+            border-radius: 3px;
+        }
+    </style>
     <%int count = 0;%>
     <body >
         <jsp:include page="header.jsp"/>
@@ -35,7 +43,7 @@
                     </c:forEach>
 
                 </table>
-                <h1 align="center"><input type="submit" value="Submit" name="submit" /></h1>
+                <h1 align="center"><input class="button3" type="submit" value="Submit" name="submit" /></h1>
             </form>
         </c:if>
         <jsp:include page="footer.jsp"/>

@@ -58,6 +58,7 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
+        <h1 style="text-align: center">List Classes</h1>
         <div class="row">
             <c:forEach var="x" items="${classList}">
                 <div class="column">
@@ -96,6 +97,6 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="footer.jsp"/>
+        
     </body>
 </html>

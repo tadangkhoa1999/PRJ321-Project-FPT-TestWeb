@@ -47,7 +47,6 @@
     <body>
         <div class="topnav">
             <a class="active" href="home">Home</a>
-            <a href="ResponseController?action=makeResponse">Response</a>
             <a href="https://github.com/tadangkhoa1999/FPT_Test">About</a>
             <div class="topnav-right">
                 <a href="login.jsp" ><img src="media/login.png"/> Login</a>

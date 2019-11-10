@@ -57,7 +57,12 @@ public class RegisterController extends HttpServlet {
                     break;
                 }
             }
-            if (isExistUser) {
+            if(username.equals("") || password.equals("") || email.equals("")){
+                request.setAttribute("error", "Can not register please fill all field");
+                RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+                rd.forward(request, response);
+            }
+            else if (isExistUser) {
                 request.setAttribute("errorRegister", errorType);
                 RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
                 rd.forward(request, response);

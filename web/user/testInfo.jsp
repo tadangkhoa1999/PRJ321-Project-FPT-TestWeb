@@ -11,8 +11,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Test Info</title>
+        <link rel="stylesheet" href="css/login.css"/>
     </head>
     <style>
+        .form{
+            text-align:center
+        }
         .footer{
             position: absolute
         }
@@ -23,18 +27,22 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <form action="QuestionController">
-            <c:if test="${not empty TestInfo}">
-                
-                <h1>${TestInfo.testName}</h1>
-                <p>${TestInfo.testContent}
-                
-                <p><input type="submit" value="Show Question" name="action" />
-              
-            </c:if>
-        </form>
+        <div class="form">
+            <div class="container">
+                <form action="QuestionController">
+                    <c:if test="${not empty TestInfo}">
+
+                        <h1>${TestInfo.testName}</h1>
+                        <p>${TestInfo.testContent}
+
+                        <p><input type="submit" value="Show Question" name="action" />
+
+                        </c:if>
+                </form>
+            </div>
+        </div>
         <div class="footer">
-        <jsp:include page="footer.jsp"/>
+            <jsp:include page="footer.jsp"/>
         </div>
     </body>
 </html>

@@ -40,7 +40,7 @@ public class UserController extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("user/accountInfo.jsp");
                 rd.forward(request, response);
             }
-            if (request.getParameter("actionInfo").equals("Change") ) {
+            else if (request.getParameter("actionInfo").equals("Change") ) {
                 RequestDispatcher rd = request.getRequestDispatcher("user/changeInfo.jsp");
                 rd.forward(request, response);
             } else if (request.getParameter("actionInfo").equals("save")) {
