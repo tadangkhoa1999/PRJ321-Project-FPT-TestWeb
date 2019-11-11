@@ -51,6 +51,9 @@ public class ClassController extends HttpServlet {
                 case "add":
                     addClass(request, response);
                     break;
+                case "Add Class":
+                    saveAddClass(request, response);
+                    break;
             }
         } catch (Exception e) {
             response.getWriter().print(e);
@@ -78,11 +81,10 @@ public class ClassController extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("admin/listClass.jsp");
                 rd.forward(request, response);
 
-            }else if(u.getUserType() == 2){
+            } else if (u.getUserType() == 2) {
                 RequestDispatcher rd = request.getRequestDispatcher("user/listClass.jsp");
                 rd.forward(request, response);
-            } 
-            else {
+            } else {
                 RequestDispatcher rd = request.getRequestDispatcher("listClass.jsp");
                 rd.forward(request, response);
             }
@@ -101,7 +103,30 @@ public class ClassController extends HttpServlet {
     }
 
     public void addClass(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session = request.getSession(true);
+        int subjectID = 1;
+        try {
+            subjectID = Integer.valueOf(request.getParameter("subjectID"));
+        } catch (Exception e) {
+            subjectID = (int) session.getAttribute("subjectID");
+        }
+        session.setAttribute("subjectID", subjectID);
 
+        RequestDispatcher rd = request.getRequestDispatcher("admin/addClass.jsp");
+        rd.forward(request, response);
+    }
+
+    public void saveAddClass(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session = request.getSession(true);
+        int subjectID = (int) session.getAttribute("subjectID");
+
+        String className = request.getParameter("className");
+        String classContent = request.getParameter("classContent");
+
+        ClassDAO dao = new ClassDAO();
+        dao.insert(className, subjectID, classContent);
+        int classID = dao.getNewClassID(subjectID);
+        response.sendRedirect("TestController?classID=" + classID);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

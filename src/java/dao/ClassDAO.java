@@ -77,4 +77,29 @@ public class ClassDAO {
         ps.close();
         conn.close();
     }
+
+    public void insert(String className, int subjectID, String classContent) throws Exception {
+        String sql = "INSERT [Class] ([className], [subjectID], [classContent]) VALUES (?, ?, ?)";
+        Connection con = new DBContext().getConnection();
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, className);
+        ps.setInt(2, subjectID);
+        ps.setString(3, classContent);
+        ps.executeUpdate();
+        ps.close();
+        con.close();
+    }
+
+    public int getNewClassID(int subjectID) throws Exception {
+        Connection conn = new DBContext().getConnection();
+        String sql = "select * from [Class] where subjectID = " + subjectID;
+        ResultSet rs = conn.prepareStatement(sql).executeQuery();
+        int id = 0;
+        while (rs.next()) {
+            id = rs.getInt("classID");
+        }
+        rs.close();
+        conn.close();
+        return id;
+    }
 }

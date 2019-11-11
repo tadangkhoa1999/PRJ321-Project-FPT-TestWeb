@@ -147,7 +147,7 @@
             </h2>
             <ul style="list-style-type:none;">
                 <c:forEach var="x" items="${listUser}">
-                    <li><a href="UserController?userID=${x.userID}&action=info">${x.username}</a></li>
+                    <li><a href="UserController?userID=${x.userID}&action=showInfo">${x.username}</a></li>
                     </c:forEach>
             </ul>
         </c:if>

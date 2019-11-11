@@ -17,7 +17,7 @@
         <form action="TestController">
             <table>
                 <tr><td>Test name</td> <td><input type="text" name="testName" value="" /></td></tr>
-                <tr><td>Question Content</td> <td><textarea name="testContent" rows="4" cols="40" ></textarea></td></tr>
+                <tr><td>Test Content</td> <td><textarea name="testContent" rows="4" cols="40" ></textarea></td></tr>
                 <tr><td>Difficulty</td> <td><input type="text" name="difficulty" value="" /></td></tr>
             </table>
             <p><input type="submit" value="Add Test" name="action" /></p>
