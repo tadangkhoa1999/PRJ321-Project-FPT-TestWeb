@@ -19,13 +19,6 @@
                 text-align : left;
                 color : white;
                 padding : 8px;
-
-
-                /*position: absolute;*/
-                right: 0;
-                bottom: 0;
-                left: 0;
-                padding: 1rem;
                 text-align: center;
 
             }

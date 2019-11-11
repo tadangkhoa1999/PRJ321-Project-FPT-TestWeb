@@ -79,6 +79,7 @@
             <input type="text" placeholder="Search.." name="searchText">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
+        <h1 style="text-align: center">Subject</h1>
         <table class="center">
             <c:forEach var="x" items="${listSubject}">
                 <tr>

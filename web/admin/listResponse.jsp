@@ -17,6 +17,13 @@
             text-align: center;
             align-items: center;
         }
+        .container{
+            position: absolute;
+            top: 660px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
     </style>
     <body>
         <jsp:include page="header.jsp"/>
@@ -45,6 +52,8 @@
                 </c:forEach>
             </table>
         </div>
+        <div class="container">
         <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

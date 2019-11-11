@@ -97,6 +97,8 @@
                 </div>
             </div>
         </div>
-        
+        <div style="margin-top: 40px">
+            <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

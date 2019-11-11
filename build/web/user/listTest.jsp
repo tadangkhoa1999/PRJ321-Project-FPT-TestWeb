@@ -18,6 +18,7 @@
 
             body {
                 font-family: Arial, Helvetica, sans-serif;
+                
             }
 
             /* Float four columns side by side */
@@ -53,15 +54,14 @@
                 text-align: center;
                 background-color: #f1f1f1;
             }
+            
         </style>
     </head>
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <h1>
-            List Test
-        </h1>
         <h1 style="text-align: center">List Tests</h1>
+        <div class="body">
         <div class="row">
             <c:forEach var="x" items="${testList}">
                 <div class="column">
@@ -73,6 +73,9 @@
                 </div>
             </c:forEach>
         </div>
+        </div>
+        <div style="margin-top: 40px">
         <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

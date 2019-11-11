@@ -108,6 +108,8 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="footer.jsp"/>
+        <div style="margin-top: 40px;">
+            <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

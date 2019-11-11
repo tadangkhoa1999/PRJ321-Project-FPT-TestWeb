@@ -18,6 +18,7 @@
         }
         
         .footer{
+            margin-top: 100px;
             position: relative;
         }
         .button3 {
@@ -38,7 +39,7 @@
     </c:if>
     <div class="form">
         <div class="container">
-            <form action="changeInfoController">
+            <form action="UserController">
                 <div style="width:300px; margin:0 auto;">
                     <h2>Change Account Info</h2>
                     <c:if test="${not empty login}">
@@ -50,13 +51,13 @@
                                 <td>User ID </td><td><input type="text" name="userid" value="${login.getUserID()}" readonly="readonly" /></td>
                             </tr>
                             <tr>
-                                <td>Username </td><td><input type="text" name="username"  value="${login.getUsername()}"  pattern="^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" title="Username can't contain special characters"/></td>
+                                <td>Username </td><td><input type="text" name="username"  value="${login.getUsername()}"/></td>
                             </tr>    
                             <tr>    
-                                <td>Password </td><td><input type="password" name="password" value=""  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" title="Password must have at least 4 character and contain number"/></td>
+                                <td>Password </td><td><input type="password" name="password" value=""/></td>
                             </tr>
                             <tr>
-                                <td>Confirm Password</td><td><input type="password" name="repassword" value="" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" title="Password must have at least 4 character and contain number" /></td>
+                                <td>Confirm Password</td><td><input type="password" name="repassword" value=""/></td>
                             </tr>
                             <tr>
                                 <td>Email</td><td><input type="text" name="email" value="${login.getEmail()}" /></td>
@@ -66,7 +67,7 @@
                             </tr>
                         </table>
                         <div style="text-align: center">
-                            <input type="submit" class="button3" name="save" value="Save" onclick="return confirm('Do you want to change?')"/>
+                            <input type="submit" class="button3" name="actionInfo" value="save" onclick="return confirm('Do you want to change?')"/>
                         </div>
                     </c:if>
             </form>

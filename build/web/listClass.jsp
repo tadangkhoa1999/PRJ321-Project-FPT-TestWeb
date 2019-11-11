@@ -54,7 +54,15 @@
                 text-align: center;
                 background-color: #f1f1f1;
             }
-            
+            .footer {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 1rem;
+                background-color: #efefef;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -70,6 +78,9 @@
                     </div>
                 </div>
             </c:forEach>
+        </div>
+        <div class="footer">
+            <jsp:include page="footer.jsp"/>
         </div>
         </body>
 </html>

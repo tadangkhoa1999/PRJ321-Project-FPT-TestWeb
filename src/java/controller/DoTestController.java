@@ -41,6 +41,7 @@ public class DoTestController extends HttpServlet {
         try {
             if(request.getParameter("submit") != null){
                 HttpSession session = request.getSession(true);
+                
                 int testID = Integer.valueOf(session.getAttribute("testID").toString());
                 //get list question
                 QuestionDAO dao = new QuestionDAO();

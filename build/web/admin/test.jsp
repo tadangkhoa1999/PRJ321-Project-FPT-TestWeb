@@ -15,22 +15,23 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"></jsp:include>
-        <table border="1">
-            <tr>
-                <th>Question</th>
-                <th></th>
-                <th></th>
-            </tr>
+        <h1 style="text-align: center">Questions Manipulation</h1>
+            <table border="1">
+                <tr>
+                    <th>Question</th>
+                    <th></th>
+                    <th></th>
+                </tr>
             <c:forEach var="x" items="${listQuestion}">
                 <tr>
-                    <td>${x.questionContent}
+                    <td style="width: 90%">${x.questionContent}
                         <p>A. ${x.opt1}</p>
                         <p>B. ${x.opt2}</p>
                         <p>C. ${x.opt3}</p>
                         <p>D. ${x.opt4}</p>
                         <p>Correct Answer: ${x.rightOption}</p>
                     </td>
-                    <td align="center">
+                    <td align="center" style="width: 5%">
                         <c:url var="delete" value="QuestionController">
                             <c:param name="testID" value="${param.testID}"/>
                             <c:param name="questionID" value="${x.questionID}"/>
@@ -40,7 +41,7 @@
                             <img src="media/delete.png"/> Delete
                         </a>
                     </td>
-                    <td align="center">
+                    <td align="center" style="width: 5%">
                         <c:url var="edit" value="QuestionController">
                             <c:param name="testID" value="${param.testID}"/>
                             <c:param name="questionID" value="${x.questionID}"/>
@@ -65,6 +66,8 @@
                 </td>
             </tr>
         </table>
-        <jsp:include page="footer.jsp"/>
+        <div style="margin-top: 40px">
+            <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

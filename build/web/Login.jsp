@@ -16,7 +16,7 @@
     <body>
         <style>
             .footer{
-                position: absolute
+                position: relative
             }
             .form{
                 align-items: center

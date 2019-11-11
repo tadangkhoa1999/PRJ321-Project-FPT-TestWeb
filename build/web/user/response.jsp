@@ -37,6 +37,7 @@
         <jsp:include page="navigationBar.jsp"/>
         <div class="form">
             <div class="container">
+                <h3>Response</h3>
                 <form action="ResponseController">
                     <div style="width:300px; margin:0 auto;">
                         <table>

@@ -16,17 +16,6 @@
         <title>List Subject</title>
     </head>
     <style>
-        .footer{
-            position: absolute
-        }
-        
-        table.center {
-            margin-left:auto; 
-            margin-right:auto;
-        
-        }
-    </style>
-    <style>
         body {
             font-family: Arial;
         }
@@ -66,23 +55,31 @@
             clear: both;
             display: table;
         }
+        table.center {
+            margin-left:auto; 
+            margin-right:auto;
+
+        }
+        .footer{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
     </style>
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <!--        <form action="SearchController">
-                    <input type="text" name="SearchSubject"/>&nbsp;<button>Search</button>
-                </form>-->
         <form class="example" action="SearchController" style="margin:auto;max-width:300px">
             <input type="text" placeholder="Search.." name="searchText">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <p style="text-align: center"> Subject
+        <h1 style="text-align: center"> Subject</h1>
         <p><table class="center">
             <c:forEach var="x" items="${listSubject}">
                 <tr>
                     <td>
-                        <a href="ClassController?subjectID=${x.getSubjectID()}">${x.getSubjectName()}</a>
+                        <br><a href="ClassController?subjectID=${x.getSubjectID()}">${x.getSubjectName()}</a>
                     </td>
                 </tr>
             </c:forEach>

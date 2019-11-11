@@ -17,29 +17,32 @@
         .form{
             text-align:center
         }
-        .footer{
-            position: absolute
-        }
         .body{
             align-content: center
+        }
+        .footer{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
     </style>
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
         <div class="form">
-            <div class="container">
-                <form action="QuestionController">
-                    <c:if test="${not empty TestInfo}">
 
-                        <h1>${TestInfo.testName}</h1>
-                        <p>${TestInfo.testContent}
+            <form action="QuestionController">
+                <c:if test="${not empty TestInfo}">
 
-                        <p><input type="submit" value="Show Question" name="action" />
+                    <h1>${TestInfo.testName}</h1>
+                    <p>${TestInfo.testContent}
 
-                        </c:if>
-                </form>
-            </div>
+                    <p><input type="submit" value="Show Question" name="action" />
+
+                    </c:if>
+            </form>
+
         </div>
         <div class="footer">
             <jsp:include page="footer.jsp"/>

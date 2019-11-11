@@ -17,19 +17,21 @@
         <jsp:include page="navigationBar.jsp"/>
 
         <c:if test="${not empty TestInfo}">
-            <form action="TestController">
-                <p>
-                    Test name: ${TestInfo.testName}
-                    <br>Test Content: ${TestInfo.testContent}
-                    <br>Difficulty: ${TestInfo.difficulty}
-                    <br><input type="submit" value="Edit Info" name="action"/>
-                </p>
-            </form>
-            <form action="QuestionController">
-                <p>
-                    <input type="submit" value="Show Question" name="action" />
-                </p>
-            </form>
+            <div style="text-align: center">
+                <form action="TestController">
+                    <p>
+                        <h1>${TestInfo.testName}</h1>
+                        <br>${TestInfo.testContent}
+                        <br><br>Difficulty: ${TestInfo.difficulty}
+                        <br><br><input type="submit" value="Edit Info" name="action"/>
+                    </p>
+                </form>
+                <form action="QuestionController">
+                    <p>
+                        <input type="submit" value="Show Question" name="action" />
+                    </p>
+                </form>
+            </div>
         </c:if>
         <jsp:include page="footer.jsp"/>
     </body>
