@@ -4,6 +4,7 @@
     Author     : dell
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,6 +33,9 @@
         </style>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"></jsp:include>
+        <c:if test="${not empty error}">
+            ${error}
+        </c:if>
         <div class="form">
         <div class="container">
             <div style="width:300px; margin:0 auto;">
