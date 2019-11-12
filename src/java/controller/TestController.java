@@ -83,7 +83,7 @@ public class TestController extends HttpServlet {
         }
         session.setAttribute("testID", testID);
         TestDAO tdao = new TestDAO();
-
+        request.setAttribute("testname", request.getParameter("testname"));
         User u = (User) session.getAttribute("login");
         if (u == null) {
             RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
@@ -109,7 +109,7 @@ public class TestController extends HttpServlet {
             classID = (int) session.getAttribute("classID");
         }
         session.setAttribute("classID", classID);
-
+        request.setAttribute("classname", request.getParameter("classname"));
         TestDAO dao = new TestDAO();
         request.setAttribute("testList", dao.listTestByClass(classID));
         User u = (User) session.getAttribute("login");

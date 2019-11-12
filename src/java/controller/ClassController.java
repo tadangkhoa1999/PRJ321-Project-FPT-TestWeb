@@ -69,7 +69,7 @@ public class ClassController extends HttpServlet {
             subjectID = (int) session.getAttribute("subjectID");
         }
         session.setAttribute("subjectID", subjectID);
-
+        request.setAttribute("subjectname", request.getParameter("subjectname"));
         ClassDAO dao = new ClassDAO();
         request.setAttribute("classList", dao.listClassBySubject(subjectID));
         User u = (User) session.getAttribute("login");

@@ -151,9 +151,7 @@
                     </c:forEach>
             </ul>
         </c:if>
-        <p>
-
-        </p>
+        
         
     </body>
 </html>

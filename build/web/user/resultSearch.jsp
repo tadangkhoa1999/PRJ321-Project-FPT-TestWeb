@@ -132,9 +132,6 @@
                 </c:forEach>
             </div>
         </c:if>
-        <p>
-
-        </p>
-        <jsp:include page="footer.jsp"/>
+        
     </body>
 </html>

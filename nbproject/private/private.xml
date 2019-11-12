@@ -3,18 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/src/java/filter/AuthenFilter.java</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/web/admin/listTest.jsp</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/src/java/controller/ClassController.java</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/web/admin/accountInfo.jsp</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/src/java/controller/TestController.java</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/web/admin/addTest.jsp</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/src/java/dao/TestDAO.java</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/web/admin/addClass.jsp</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/src/java/dao/ClassDAO.java</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/web/login.jsp</file>
-            <file>file:/C:/Users/dell/Documents/NetBeansProjects/FPT_TestWeb/src/java/filter/AuthorFilter.java</file>
+            <file>file:/C:/Users/BangPC/Desktop/FPT/Fall2019/Java%20Web/project1/FPT_TestWeb/web/admin/resultSearch.jsp</file>
+            <file>file:/C:/Users/BangPC/Desktop/FPT/Fall2019/Java%20Web/project1/FPT_TestWeb/web/user/resultSearch.jsp</file>
         </group>
     </open-files>
 </project-private>

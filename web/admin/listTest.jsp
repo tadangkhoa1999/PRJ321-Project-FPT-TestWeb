@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 40px;">
+        <div style="margin-top: 273px;">
             <jsp:include page="footer.jsp"/>
         </div>
     </body>

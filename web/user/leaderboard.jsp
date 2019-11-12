@@ -15,7 +15,7 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <table border="1" cellspacing="0">
+        <table border="1" cellspacing="0" align="center">
             <tr>
                 <th>Username</th>	<th>Mark</th>
             </tr>

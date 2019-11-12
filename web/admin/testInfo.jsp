@@ -33,6 +33,8 @@
                 </form>
             </div>
         </c:if>
+        <div style="margin-top: 253px">
         <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

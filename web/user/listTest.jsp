@@ -60,16 +60,16 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <h1 style="text-align: center">List Tests</h1>
+        <h1 style="text-align: center">List Tests ${classname}</h1>
         <div class="body">
         <div class="row">
             <c:forEach var="x" items="${testList}">
                 <div class="column">
                     <div class="card">
                         <h3>Test</h3>
-                        <p><a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a></p>
+                        <p><a href="TestController?testID=${x.testID}&action=TestInfo&testname=${x.testName}">${x.testName}</a></p>
                         <p>
-                            <a href="TestController?testID=${x.testID}&action=leaderboard">Leaderboard</a>
+                            <a href="TestController?testID=${x.testID}&action=leaderboard">Leader board</a>
                         </p>
                         <p>${x.testContent}</p>
                     </div>
@@ -77,7 +77,7 @@
             </c:forEach>
         </div>
         </div>
-        <div style="margin-top: 40px">
+        <div style="margin-top: 248px">
         <jsp:include page="footer.jsp"/>
         </div>
     </body>

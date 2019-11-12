@@ -31,7 +31,7 @@ public class MarkDAO {
         conn.close();
     }
     
-    public List<Mark> select(int testID) throws Exception {
+    public static List<Mark> select(int testID) throws Exception {
         List<Mark> ls = new ArrayList<>();
         Connection conn = new DBContext().getConnection();
         String sql = "select * from [Mark] where testID = " + testID + " "
@@ -39,11 +39,17 @@ public class MarkDAO {
         ResultSet rs = conn.prepareStatement(sql).executeQuery();
         while (rs.next()) {
             int userID = rs.getInt("userID");
-            int mark = rs.getInt("mark");
+            double mark = rs.getDouble("mark");
             ls.add(new Mark(userID, testID, mark));
         }
         rs.close();
         conn.close();
         return ls;
+    }
+    public static void main(String[] args) throws Exception {
+        List<Mark> ls = select(1);
+        for(Mark m : ls){
+            System.out.println(m.getMark());
+        }
     }
 }

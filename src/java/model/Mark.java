@@ -15,9 +15,9 @@ public class Mark {
 
     private int userID;
     private int testID;
-    private int mark;
+    private double mark;
 
-    public Mark(int userID, int testID, int mark) {
+    public Mark(int userID, int testID, double mark) {
         this.userID = userID;
         this.testID = testID;
         this.mark = mark;
@@ -39,14 +39,15 @@ public class Mark {
         this.testID = testID;
     }
 
-    public int getMark() {
+    public double getMark() {
         return mark;
     }
 
-    public void setMark(int mark) {
+    public void setMark(double mark) {
         this.mark = mark;
     }
 
+    
     public User getUser() throws Exception {
         UserDAO UserDAO = new UserDAO();
         return UserDAO.selectbyId(userID);

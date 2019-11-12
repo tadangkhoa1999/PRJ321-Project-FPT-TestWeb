@@ -60,19 +60,19 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
-        <h1 style="text-align: center">List Classes</h1>
+        <h1 style="text-align: center">${subjectname} List Classes</h1>
         <div class="row">
             <c:forEach var="x" items="${classList}">
                 <div class="column">
                     <div class="card">
                         <h3>Class</h3>
-                        <p><a href="TestController?classID=${x.classID}">${x.className}</a></p>
+                        <p><a href="TestController?classID=${x.classID}&classname=${x.className}">${x.className}</a></p>
                         <p>${x.classContent}</p>
                     </div>
                 </div>
             </c:forEach>
         </div>
-        <div style="margin-top: 40px">
+        <div style="margin-top: 273px">
         <jsp:include page="footer.jsp"/>
         </div>
     </body>
