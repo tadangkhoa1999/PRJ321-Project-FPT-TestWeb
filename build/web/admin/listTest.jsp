@@ -69,6 +69,9 @@
                         <p>
                             <a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a>
                         </p>
+                        <p>
+                            <a href="TestController?testID=${x.testID}&action=leaderboard">Leaderboard</a>
+                        </p>
                         <c:url var="delete" value="TestController">
                             <c:param name="classID" value="${param.classID}"/>
                             <c:param name="testID" value="${x.testID}"/>

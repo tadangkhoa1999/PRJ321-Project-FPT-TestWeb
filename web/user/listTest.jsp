@@ -68,6 +68,9 @@
                     <div class="card">
                         <h3>Test</h3>
                         <p><a href="TestController?testID=${x.testID}&action=TestInfo">${x.testName}</a></p>
+                        <p>
+                            <a href="TestController?testID=${x.testID}&action=leaderboard">Leaderboard</a>
+                        </p>
                         <p>${x.testContent}</p>
                     </div>
                 </div>

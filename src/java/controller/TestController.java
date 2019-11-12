@@ -199,11 +199,16 @@ public class TestController extends HttpServlet {
 
     public void leaderboard(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession(true);
-        int testID = (int) session.getAttribute("testID");
+        int testID = Integer.parseInt(request.getParameter("testID"));
+        User u = (User) session.getAttribute("login");
+        String role = "";
+        if (u != null) {
+            role = u.getUserType() == 1 ? "admin/" : "user/";
+        }
 
         MarkDAO dao = new MarkDAO();
         request.setAttribute("listMark", dao.select(testID));
-        RequestDispatcher rd = request.getRequestDispatcher("leaderboard.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher(role + "leaderboard.jsp");
         rd.forward(request, response);
     }
 
