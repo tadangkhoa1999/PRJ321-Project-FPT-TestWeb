@@ -15,6 +15,7 @@
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
+        <h1 style="text-align: center">Leader Board</h1>
         <table border="1" cellspacing="0" align="center">
             <tr>
                 <th>Username</th>	<th>Mark</th>
@@ -25,6 +26,8 @@
                 </tr>
             </c:forEach>
         </table>
+        <div style="margin-top: 50px">
         <jsp:include page="footer.jsp"/>
+        </div>
     </body>
 </html>

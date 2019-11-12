@@ -23,13 +23,16 @@
             text-align: center;
         }
     </style>
+    <%int count = 0;%>
     <body>
         <jsp:include page="header.jsp"/>
         <jsp:include page="navigationBar.jsp"/>
         <div style="text-align: center">
+            <h1>Test Result</h1>
             <c:if test="${not empty sessionScope.mark}">
                 Your mark is
                 ${sessionScope.mark}
+                
                 <p><a href="TestController?classID=${sessionScope.classID}">Go to class</a></p>
             </div>
         </c:if>

@@ -54,20 +54,21 @@ public class DoTestController extends HttpServlet {
                     if(request.getParameter(String.valueOf(questions.get(i).getQuestionID())) != null){
                         userAnswer = request.getParameter(String.valueOf(questions.get(i).getQuestionID()));
                     }else{
-                        userAnswer = "-1";
+                        userAnswer = "Not Answer";
                     }
                     userAnswers.add(userAnswer);
                 }
                 //count right ansewer and calculate mark
                 int rightAnswer = 0;
                 for (int i = 0; i < questions.size(); i++) {
-                    if(questions.get(i).getRightOption().toString().equals(userAnswers.get(i))){
+                    if(questions.get(i).getRightOption().equals(userAnswers.get(i))){
                         rightAnswer++;
                     }
                 }
                 double mark = rightAnswer * 10.0/ questions.size();
                 session.setAttribute("mark", mark);
-                
+                request.setAttribute("userAnswers", userAnswers);
+                request.setAttribute("rightAnswers", rightAnswer);
                 //Add to Mark table in database
                 MarkDAO mdao = new MarkDAO();
                 User u = (User) session.getAttribute("login");
